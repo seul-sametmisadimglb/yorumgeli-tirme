@@ -122,7 +122,7 @@
 
 .badge-form-card h3 {
     margin: 0 0 10px;
-    color: #005B43;
+    color: #dc2626;
     font-size: 16px;
     font-weight: 600;
 }
@@ -208,16 +208,15 @@
 
 .template-item:hover, 
 .template-item-auto:hover {
-    border-color: #005B43;
-    transform: translateY(-1px);
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border-color: #dc2626;
+    transform: scale(1.1);
 }
 
 .template-item.selected, 
 .template-item-auto.selected {
-    border-color: #005B43;
-    background: rgba(0, 91, 67, 0.1);
-    box-shadow: 0 0 0 1px #005B43;
+    border-color: #dc2626;
+    background: #fef2f2;
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
 }
 
 /* Rozet Listesi */
