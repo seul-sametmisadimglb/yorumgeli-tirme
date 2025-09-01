@@ -15,34 +15,28 @@ $comment_count = get_comments_number($post_id);
             </div>
         </div>
         <div class="reactions">
-            <button class="reaction" data-reaction="guzel" title="Güzel">
+            <button class="reaction" data-reaction="guzel">
                 <span class="emoji">👍</span>
-                <span>Güzel</span>
                 <span class="count">0</span>
             </button>
-            <button class="reaction" data-reaction="sevdim" title="Sevdim">
+            <button class="reaction" data-reaction="sevdim">
                 <span class="emoji">😂</span>
-                <span>Sevdim</span>
                 <span class="count">0</span>
             </button>
-            <button class="reaction" data-reaction="asik_oldum" title="Aşık Oldum">
+            <button class="reaction" data-reaction="asik_oldum">
                 <span class="emoji">😍</span>
-                <span>Aşık Oldum</span>
                 <span class="count">0</span>
             </button>
-            <button class="reaction" data-reaction="sasirtici" title="Şaşırtıcı">
+            <button class="reaction" data-reaction="sasirtici">
                 <span class="emoji">😮</span>
-                <span>Şaşırtıcı</span>
                 <span class="count">0</span>
             </button>
-            <button class="reaction" data-reaction="gaza_geldim" title="Gaza Geldim">
+            <button class="reaction" data-reaction="gaza_geldim">
                 <span class="emoji">🔥</span>
-                <span>Gaza Geldim</span>
                 <span class="count">0</span>
             </button>
-            <button class="reaction" data-reaction="uzucu" title="Üzücü">
+            <button class="reaction" data-reaction="uzucu">
                 <span class="emoji">😢</span>
-                <span>Üzücü</span>
                 <span class="count">0</span>
             </button>
         </div>

@@ -1,27 +1,27 @@
-/* CSS Custom Properties - Ana renk #005B43 */
+/* CSS Custom Properties - Kırmızı/Siyah Tema */
 :root {
-    --primary-color: #005B43;
-    --primary-hover: #007a5a;
-    --primary-dark: #003d2e;
-    --primary-light: rgba(0, 91, 67, 0.1);
-    --primary-gradient: linear-gradient(135deg, #005B43, #007a5a);
+    --primary-color: #dc2626;
+    --primary-hover: #ef4444;
+    --primary-dark: #991b1b;
+    --primary-light: rgba(220, 38, 38, 0.1);
+    --primary-gradient: linear-gradient(135deg, #dc2626, #ef4444);
     
-    --secondary-color: #00b894;
-    --accent-color: #0984e3;
+    --secondary-color: #f87171;
+    --accent-color: #fca5a5;
     
-    --bg-primary: #0d1421;
-    --bg-secondary: #1a2332;
-    --bg-tertiary: #243447;
-    --bg-card: #2d3e52;
-    --bg-hover: #3a4d63;
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #2a2a2a;
+    --bg-card: #1f1f1f;
+    --bg-hover: #333333;
     
     --text-primary: #ffffff;
-    --text-secondary: #e2e8f0;
-    --text-muted: #94a3b8;
+    --text-secondary: #e5e5e5;
+    --text-muted: #a3a3a3;
     --text-accent: var(--primary-color);
     
-    --border-color: #334155;
-    --border-light: #475569;
+    --border-color: #404040;
+    --border-light: #525252;
     --border-hover: var(--primary-color);
     
     --success-color: #10b981;
@@ -29,10 +29,10 @@
     --warning-color: #f59e0b;
     --info-color: #3b82f6;
     
-    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.6);
     
     --border-radius-sm: 4px;
     --border-radius-md: 6px;
@@ -83,14 +83,13 @@
     border-radius: var(--border-radius-xl) var(--border-radius-xl) 0 0;
 }
 
-/* Reactions Section - Geliştirilmiş tasarım */
+/* Reactions Section - Disqus Tarzı Yan Yana */
 .ruh-reactions-section {
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-xl);
     background: var(--bg-secondary);
     border-radius: var(--border-radius-xl);
     border: 1px solid var(--border-color);
-    text-align: center;
     position: relative;
     overflow: hidden;
 }
@@ -107,10 +106,11 @@
 
 .reactions-header {
     margin-bottom: var(--spacing-lg);
+    text-align: center;
 }
 
 .reactions-header .section-title {
-    font-size: var(--font-size-2xl);
+    font-size: var(--font-size-xl);
     font-weight: 700;
     margin: 0 0 var(--spacing-sm);
     background: var(--primary-gradient);
@@ -133,32 +133,37 @@
     backdrop-filter: blur(10px);
 }
 
+/* Disqus Tarzı Tepkiler - Yan Yana */
 .reactions {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-    gap: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--spacing-xs);
+    flex-wrap: wrap;
     margin-top: var(--spacing-lg);
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
+    padding: var(--spacing-md);
+    background: var(--bg-card);
+    border-radius: var(--border-radius-xl);
+    border: 1px solid var(--border-color);
 }
 
 .reaction {
-    background: var(--bg-card);
-    border: 2px solid var(--border-color);
+    background: transparent;
+    border: 1px solid var(--border-color);
     cursor: pointer;
     transition: all var(--transition-base);
-    padding: var(--spacing-lg) var(--spacing-md);
-    border-radius: var(--border-radius-xl);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--border-radius-lg);
     display: flex;
-    flex-direction: column;
     align-items: center;
-    gap: var(--spacing-sm);
-    color: var(--text-secondary);
+    gap: var(--spacing-xs);
+    color: var(--text-muted);
     font-weight: 600;
+    font-size: var(--font-size-sm);
     position: relative;
     overflow: hidden;
-    backdrop-filter: blur(10px);
+    min-width: 60px;
+    justify-content: center;
 }
 
 .reaction::before {
@@ -168,7 +173,7 @@
     left: -100%;
     width: 100%;
     height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    background: linear-gradient(90deg, transparent, rgba(220, 38, 38, 0.1), transparent);
     transition: left 0.5s ease;
 }
 
@@ -179,44 +184,41 @@
 .reaction:hover {
     border-color: var(--primary-color);
     background: var(--bg-hover);
-    transform: translateY(-3px);
-    box-shadow: var(--shadow-xl);
+    color: var(--text-primary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .reaction.selected {
     border-color: var(--primary-color);
     background: var(--primary-light);
-    color: var(--text-primary);
-    transform: scale(1.05);
-    box-shadow: 0 0 0 4px rgba(0, 91, 67, 0.2);
+    color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.2);
 }
 
 .reaction .emoji {
-    font-size: 2.5rem;
+    font-size: 1.2rem;
     display: block;
-    margin-bottom: var(--spacing-xs);
-    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
-}
-
-.reaction span:not(.count) {
-    font-size: var(--font-size-xs);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.75px;
-    opacity: 0.9;
+    filter: drop-shadow(0 1px 2px rgba(0,0,0,0.3));
 }
 
 .reaction .count {
     background: var(--primary-color);
     color: white;
-    padding: 4px 10px;
+    padding: 2px 6px;
     border-radius: var(--border-radius-full);
     font-size: var(--font-size-xs);
     font-weight: 700;
-    min-width: 28px;
+    min-width: 20px;
     text-align: center;
-    box-shadow: var(--shadow-md);
-    border: 2px solid rgba(255,255,255,0.2);
+    box-shadow: var(--shadow-sm);
+    border: 1px solid rgba(255,255,255,0.2);
+}
+
+.reaction:not(.selected) .count {
+    background: var(--bg-tertiary);
+    color: var(--text-muted);
+    border-color: var(--border-color);
 }
 
 /* Comments Header */
@@ -1156,16 +1158,23 @@
     }
     
     .reactions {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-sm);
+        gap: var(--spacing-xs);
+        padding: var(--spacing-sm);
     }
     
     .reaction {
-        padding: var(--spacing-md) var(--spacing-sm);
+        padding: var(--spacing-xs) var(--spacing-sm);
+        min-width: 50px;
+        flex-direction: column;
+        gap: 2px;
     }
     
     .reaction .emoji {
-        font-size: 2rem;
+        font-size: 1rem;
+    }
+    
+    .reaction span:not(.count) {
+        font-size: 0.7rem;
     }
     
     .comments-header {
@@ -1227,7 +1236,8 @@
 
 @media (max-width: 480px) {
     .reactions {
-        grid-template-columns: repeat(2, 1fr);
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .auth-buttons {
@@ -1240,6 +1250,6 @@
     }
     
     .reaction .emoji {
-        font-size: 1.8rem;
+        font-size: 0.9rem;
     }
 }

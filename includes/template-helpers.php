@@ -411,14 +411,14 @@ function ruh_get_user_level_badge($user_id) {
  * Seviye rengini belirler - ana renk #005B43 korunarak
  */
 function ruh_get_level_color($level) {
-    if ($level >= 100) return '#e74c3c';     // Kırmızı - Efsanevi
-    if ($level >= 75) return '#9b59b6';      // Mor - Mitik  
-    if ($level >= 50) return '#3498db';      // Mavi - Epik
-    if ($level >= 30) return '#1abc9c';      // Turkuaz - Nadir
-    if ($level >= 20) return '#f39c12';      // Turuncu - Sıradışı
-    if ($level >= 10) return '#27ae60';      // Yeşil - Deneyimli
-    if ($level >= 5) return '#005B43';       // Ana renk - Aktif
-    return '#95a5a6';                        // Gri - Yeni başlayan
+    if ($level >= 100) return '#7f1d1d';     // Koyu kırmızı - Efsanevi
+    if ($level >= 75) return '#991b1b';      // Kırmızı - Mitik  
+    if ($level >= 50) return '#dc2626';      // Ana kırmızı - Epik
+    if ($level >= 30) return '#ef4444';      // Açık kırmızı - Nadir
+    if ($level >= 20) return '#f87171';      // Pembe kırmızı - Sıradışı
+    if ($level >= 10) return '#fca5a5';      // Açık pembe - Deneyimli
+    if ($level >= 5) return '#dc2626';       // Ana renk - Aktif
+    return '#525252';                        // Koyu gri - Yeni başlayan
 }
 
 /**

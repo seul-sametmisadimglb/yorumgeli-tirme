@@ -511,15 +511,15 @@ add_action('wp_head', function() {
         ?>
         <style>
         :root {
-            --ruh-primary: #005B43;
-            --ruh-primary-hover: #007a5a;
-            --ruh-primary-light: rgba(0, 91, 67, 0.1);
-            --ruh-bg-card: #1a2332;
-            --ruh-bg-secondary: #2d3e52;
-            --ruh-border: #334155;
+            --ruh-primary: #dc2626;
+            --ruh-primary-hover: #ef4444;
+            --ruh-primary-light: rgba(220, 38, 38, 0.1);
+            --ruh-bg-card: #1f1f1f;
+            --ruh-bg-secondary: #1a1a1a;
+            --ruh-border: #404040;
             --ruh-text-primary: #ffffff;
-            --ruh-text-secondary: #e2e8f0;
-            --ruh-text-muted: #94a3b8;
+            --ruh-text-secondary: #e5e5e5;
+            --ruh-text-muted: #a3a3a3;
             --ruh-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
             --ruh-border-radius: 12px;
             --ruh-transition: all 0.2s ease;

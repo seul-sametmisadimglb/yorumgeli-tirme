@@ -58,6 +58,18 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
                     <strong><?php echo count($user_data['badges']); ?></strong>
                     <span><?php _e('Rozet', 'ruh-comment'); ?></span>
                 </div>
+                <div class="stat-item">
+                    <strong>
+                        <?php 
+                        $user_coins = get_user_meta($user_data['info']->ID, "coins", true);
+                        if ($user_coins === false || $user_coins == "") {
+                            $user_coins = 0;
+                        }
+                        echo number_format($user_coins);
+                        ?>
+                    </strong>
+                    <span><?php _e('Coin', 'ruh-comment'); ?></span>
+                </div>
             </div>
             
             <div class="profile-level-info">
@@ -218,7 +230,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     max-width: 1000px;
     margin: 0 auto;
     padding: 2rem 1rem;
-    background: var(--bg-primary, #0d1421);
+    background: var(--bg-primary, #0a0a0a);
     color: var(--text-primary, #ffffff);
 }
 
@@ -227,10 +239,10 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     gap: 2rem;
     align-items: flex-start;
     margin-bottom: 3rem;
-    background: var(--bg-secondary, #1a2332);
+    background: var(--bg-secondary, #1a1a1a);
     padding: 2rem;
     border-radius: 12px;
-    border: 1px solid var(--border-color, #334155);
+    border: 1px solid var(--border-color, #404040);
 }
 
 .profile-avatar {
@@ -241,7 +253,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     width: 120px;
     height: 120px;
     border-radius: 50%;
-    border: 4px solid var(--primary-color, #005B43);
+    border: 4px solid var(--primary-color, #dc2626);
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
@@ -252,7 +264,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     width: 36px;
     height: 36px;
     border-radius: 50%;
-    background: var(--primary-color, #005B43);
+    background: var(--primary-color, #dc2626);
     border: none;
     color: white;
     cursor: pointer;
@@ -280,7 +292,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 }
 
 .edit-profile-btn {
-    background: var(--primary-color, #005B43);
+    background: var(--primary-color, #dc2626);
     color: white;
     border: none;
     padding: 0.5rem 1rem;
@@ -322,12 +334,12 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 .stat-item strong {
     display: block;
     font-size: 1.5rem;
-    color: var(--primary-color, #005B43);
+    color: var(--primary-color, #dc2626);
     font-weight: 700;
 }
 
 .stat-item span {
-    color: var(--text-secondary, #e2e8f0);
+    color: var(--text-secondary, #e5e5e5);
     font-size: 0.875rem;
 }
 
@@ -353,26 +365,26 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 .xp-bar {
     flex: 1;
     height: 10px;
-    background: var(--bg-card, #2d3e52);
+    background: var(--bg-card, #1f1f1f);
     border-radius: 5px;
     overflow: hidden;
 }
 
 .xp-bar-progress {
     height: 100%;
-    background: linear-gradient(90deg, var(--primary-color, #005B43), #00b894);
+    background: linear-gradient(90deg, var(--primary-color, #dc2626), #ef4444);
     transition: width 0.3s ease;
 }
 
 .xp-text {
     font-size: 0.875rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted, #a3a3a3);
     white-space: nowrap;
 }
 
 .profile-meta p {
     margin: 0.5rem 0;
-    color: var(--text-secondary, #e2e8f0);
+    color: var(--text-secondary, #e5e5e5);
     font-size: 0.875rem;
 }
 
@@ -384,7 +396,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     margin: 0 0 1.5rem;
     font-size: 1.5rem;
     color: var(--text-primary, #ffffff);
-    border-bottom: 2px solid var(--primary-color, #005B43);
+    border-bottom: 2px solid var(--primary-color, #dc2626);
     padding-bottom: 0.5rem;
 }
 
@@ -398,17 +410,17 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: var(--bg-card, #2d3e52);
+    background: var(--bg-card, #1f1f1f);
     padding: 1rem;
     border-radius: 8px;
-    border: 1px solid var(--border-color, #334155);
+    border: 1px solid var(--border-color, #404040);
     transition: all 0.2s ease;
 }
 
 .profile-badge-item:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    border-color: var(--primary-color, #005B43);
+    border-color: var(--primary-color, #dc2626);
 }
 
 .profile-badge-item svg {
@@ -429,13 +441,13 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 
 .profile-comment-item {
     padding: 1.5rem;
-    background: var(--bg-secondary, #1a2332);
+    background: var(--bg-secondary, #1a1a1a);
     border-radius: 8px;
-    border-left: 4px solid var(--primary-color, #005B43);
+    border-left: 4px solid var(--primary-color, #dc2626);
 }
 
 .comment-excerpt {
-    color: var(--text-secondary, #e2e8f0);
+    color: var(--text-secondary, #e5e5e5);
     margin-bottom: 1rem;
     line-height: 1.6;
 }
@@ -445,11 +457,11 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     flex-wrap: wrap;
     gap: 1rem;
     font-size: 0.875rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted, #a3a3a3);
 }
 
 .comment-meta a {
-    color: var(--primary-color, #005B43);
+    color: var(--primary-color, #dc2626);
     text-decoration: none;
 }
 
@@ -459,7 +471,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 
 .no-content {
     text-align: center;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted, #a3a3a3);
     font-style: italic;
     padding: 2rem;
 }
@@ -479,7 +491,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 }
 
 .modal-content {
-    background: var(--bg-secondary, #1a2332);
+    background: var(--bg-secondary, #1a1a1a);
     border-radius: 12px;
     width: 90%;
     max-width: 500px;
@@ -492,7 +504,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid var(--border-color, #334155);
+    border-bottom: 1px solid var(--border-color, #404040);
 }
 
 .modal-header h3 {
@@ -503,7 +515,7 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 .modal-close {
     background: none;
     border: none;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted, #a3a3a3);
     font-size: 1.5rem;
     cursor: pointer;
 }
@@ -515,22 +527,22 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
 .tab-navigation {
     display: flex;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color, #334155);
+    border-bottom: 1px solid var(--border-color, #404040);
 }
 
 .tab-btn {
     background: none;
     border: none;
     padding: 0.75rem 1.5rem;
-    color: var(--text-muted, #94a3b8);
+    color: var(--text-muted, #a3a3a3);
     cursor: pointer;
     border-bottom: 2px solid transparent;
     transition: all 0.2s ease;
 }
 
 .tab-btn.active {
-    color: var(--primary-color, #005B43);
-    border-bottom-color: var(--primary-color, #005B43);
+    color: var(--primary-color, #dc2626);
+    border-bottom-color: var(--primary-color, #dc2626);
 }
 
 .tab-pane {
@@ -549,31 +561,31 @@ $last_activity = !empty($last_comment) ? strtotime($last_comment[0]->comment_dat
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 600;
-    color: var(--text-secondary, #e2e8f0);
+    color: var(--text-secondary, #e5e5e5);
 }
 
 .form-group input,
 .form-group textarea {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid var(--border-color, #334155);
+    border: 1px solid var(--border-color, #404040);
     border-radius: 6px;
-    background: var(--bg-card, #2d3e52);
+    background: var(--bg-card, #1f1f1f);
     color: var(--text-primary, #ffffff);
 }
 
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--primary-color, #005B43);
-    box-shadow: 0 0 0 3px rgba(0, 91, 67, 0.1);
+    border-color: var(--primary-color, #dc2626);
+    box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
 }
 
 .profile-actions {
     text-align: center;
     margin-top: 3rem;
     padding-top: 2rem;
-    border-top: 1px solid var(--border-color, #334155);
+    border-top: 1px solid var(--border-color, #404040);
 }
 
 .logout-btn {
